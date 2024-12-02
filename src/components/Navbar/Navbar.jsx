@@ -15,6 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -30,7 +31,7 @@ function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Dent Doc
       </Typography>
       <Divider />
       <List>
@@ -56,7 +57,7 @@ function Navbar(props) {
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="black"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -65,11 +66,12 @@ function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
+            color={'primary'}
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' , color: 'black' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block'} }}
           >
-            MUI
+            Dent Doc
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -77,6 +79,16 @@ function Navbar(props) {
                 {item}
               </Button>
             ))}
+            <IconButton
+            color="black"
+            aria-label="open drawer"
+            edge="start"
+            
+            sx={{ mx: 2,  }}
+          >
+            <SearchIcon/>
+          </IconButton>
+            <Button variant="outlined">Make Appointment</Button>
           </Box>
         </Toolbar>
         </Container>
@@ -99,12 +111,12 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
          
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
